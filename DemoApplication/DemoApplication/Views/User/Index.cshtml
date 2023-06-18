@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "UserDetail";
+}
+
+@if (string.IsNullOrEmpty(ViewBag.Message))
+{
+    <h2>Login User Detail</h2>
+    <h3>Hello User @ViewBag.DisplayName </h3>
+
+    @Html.ActionLink("Update user", "Edit", "User", new { id = @ViewBag.UserId }, null)
+}
+else
+{
+    <h3>@ViewBag.Message</h3>
+}

@@ -1,0 +1,49 @@
+﻿@model DemoApplication.Models.ToDoViewModel
+@{
+    ViewBag.Title = "To-Do Items";
+}
+@if (Model.Id > 0)
+{
+    <h2>Edit To-Do Item</h2>
+}
+else
+{
+    <h2>Create To-Do Item</h2>
+}
+@using (Html.BeginForm("ManageToDo", "ToDo", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.UserId)
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.ToDoItems, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.ToDoItems, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.AssignDueDates, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.AssignDueDates, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date", @Value = Model.AssignDueDates.ToShortDateString() })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Comments, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Comments, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.IsCompleted, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.CheckBoxFor(m => m.IsCompleted, new { @class = "" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn-info" type="submit">Submit</button>
+        </div>
+    </div>
+}

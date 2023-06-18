@@ -1,0 +1,55 @@
+﻿@model IEnumerable<DemoApplication.Models.ToDoViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>To-Do List</h2>
+<p>
+    <a asp-action="AddEdit">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.ToDoItems)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignDueDates)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsCompleted)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                    @Html.DisplayNameFor(modelItem => item.Id)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.ToDoItems)
+                </td>
+                <td>
+                    @item.AssignDueDates.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comments)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsCompleted)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "AddEdit", new {  id = item.Id  })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>   
