@@ -7,5 +7,6 @@ namespace DemoApplication.Repository.Interface
         List<ToDo> GetAllToDoItems();
         ToDo GetToDoItemByToDoId(int todoId);
         ToDo ManageToDo(ToDo obj);
+        bool AssignedToDoList(int toDoId, int assigndUserId);
     }
 }

@@ -22,6 +22,9 @@
                 @Html.DisplayNameFor(model => model.Comments)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.PriorityId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.IsCompleted)
             </th>
             <th></th>
@@ -44,10 +47,14 @@
                     @Html.DisplayFor(modelItem => item.Comments)
                 </td>
                 <td>
+                    @item.PriorityId.ToString()
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.IsCompleted)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "AddEdit", new {  id = item.Id  })
+                    @Html.ActionLink("Assign", "AssignTodo", new {  id = item.Id  })
                 </td>
             </tr>
         }

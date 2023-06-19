@@ -1,0 +1,24 @@
+﻿@model DemoApplication.Models.AssignToDoViewModel
+@{
+    ViewBag.Title = "Assign To-Do Items";
+}
+<h2>Assign To-Do Items</h2>
+@using (Html.BeginForm("AssignTodo", "ToDo", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.HiddenFor(m => m.ToDoId)
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.AssigndUserId, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.AssigndUserId, Model.UserList, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn-info" type="submit">Submit</button>
+        </div>
+    </div>
+}

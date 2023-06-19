@@ -1,12 +1,13 @@
 ﻿using DemoApplication.BusinessEntity;
+using DemoApplication.Filters;
 using DemoApplication.Models;
 using DemoApplication.Repository.Interface;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoApplication.Controllers
 {
+    [TypeFilter(typeof(CustomAuthorizationFilterAttribute))]
     public class UserController : Controller
     {
         private readonly IUserRepository _userRepository;
@@ -29,6 +30,12 @@ namespace DemoApplication.Controllers
                 HttpContext.Session.SetString("userid", Convert.ToString(user.UserId));
                 ViewBag.UserId = user.UserId;
                 ViewBag.DisplayName = user.FirstName + " " + user.LastName;
+
+                DashboardViewModel dm = _userRepository.GetDashboardCountByUserId(user.UserId);
+
+                ViewBag.ToDoCreated = dm.CreatedTodoCount;
+                ViewBag.AssignedToDo = dm.AssignedTodoCount;
+                ViewBag.Completed = dm.CompletedTodoCount;
             }
             else
             {
@@ -95,6 +102,26 @@ namespace DemoApplication.Controllers
             return View();
         }
 
+        #endregion
+
+        #region Get User Notification
+
+        [HttpGet]
+        public JsonResult GetNotifications(int userId)
+        {
+            return Json(_userRepository.GetNotificationByUserId(userId));
+        }
+
+
+        #endregion
+
+        #region GetReadNotifications
+
+        [HttpGet]
+        public JsonResult GetReadNotifications(int notificationId)
+        {
+            return Json(_userRepository.IsReadNotification(notificationId));
+        }
         #endregion
     }
 }

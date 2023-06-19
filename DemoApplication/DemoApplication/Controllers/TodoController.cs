@@ -1,18 +1,23 @@
 ﻿using DemoApplication.BusinessEntity;
+using DemoApplication.Filters;
 using DemoApplication.Models;
 using DemoApplication.Repository.Interface;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace DemoApplication.Controllers
 {
+    [TypeFilter(typeof(CustomAuthorizationFilterAttribute))]
     public class TodoController : Controller
     {
         private readonly IToDoRepository _toDoRepository;
+        private readonly IUserRepository _userRepository;
 
-        public TodoController(IToDoRepository toDoRepository)
+        public TodoController(IToDoRepository toDoRepository, IUserRepository userRepository)
         {
             _toDoRepository = toDoRepository;
+            _userRepository = userRepository;
         }
 
         #region Get Current User Todo List
@@ -31,6 +36,7 @@ namespace DemoApplication.Controllers
                 model.Comments = item.Comments;
                 model.IsCompleted = item.IsCompleted;
                 model.UserId = item.UserId;
+                model.PriorityId = (CommonEnum.PriorityEnum)item.PriorityId;
                 list.Add(model);
             }
             return View(list);
@@ -55,6 +61,7 @@ namespace DemoApplication.Controllers
                 model.ToDoItems = toDoItemModel.ToDoItems;
                 model.AssignDueDates = toDoItemModel.AssignDueDates;
                 model.Comments = toDoItemModel.Comments;
+                model.PriorityId = (CommonEnum.PriorityEnum)toDoItemModel.PriorityId;
                 model.IsCompleted = toDoItemModel.IsCompleted;
                 model.UserId = toDoItemModel.UserId;
                 return View(model);
@@ -74,7 +81,8 @@ namespace DemoApplication.Controllers
                     AssignDueDates = model.AssignDueDates,
                     Comments = model.Comments,
                     IsCompleted = model.IsCompleted,
-                    UserId = userId
+                    UserId = userId,
+                    PriorityId = (int)model.PriorityId
                 });
                 if (returnobj != null)
                 {
@@ -91,7 +99,37 @@ namespace DemoApplication.Controllers
                 ModelState.AddModelError("", "Model is Invalid");
             }
             return View(model);
-        }        
+        }
+
+        #endregion
+
+        #region Assign ToDo
+
+        [HttpGet]
+        public ActionResult<AssignToDoViewModel> AssignTodo(int id)
+        {
+            AssignToDoViewModel model = new AssignToDoViewModel();
+            int userId = Convert.ToInt32(HttpContext.Session.GetString("userid"));
+            model.ToDoId = id;
+            model.UserList = _userRepository.GetAllUsers().Where(x => x.UserId != userId).Select(x => new SelectListItem { Text = x.FirstName + " " + x.LastName, Value = Convert.ToString(x.UserId) }).ToList();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult<AssignToDoViewModel> AssignTodo(AssignToDoViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _toDoRepository.AssignedToDoList(model.ToDoId, model.AssigndUserId);
+                ViewBag.Message = "Assigned To-Do List to User Successfully..";
+                return RedirectToAction("Index", "Todo");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Model is Invalid");
+            }
+            return View(model);            
+        }
 
         #endregion
     }

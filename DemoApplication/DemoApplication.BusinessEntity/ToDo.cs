@@ -8,5 +8,6 @@
         public string Comments { get; set; }
         public bool IsCompleted { get; set; }
         public int UserId { get; set; }
+        public int PriorityId { get; set; }
     }
 }

@@ -52,10 +52,35 @@ namespace DemoApplication.Repository
                 ["assignduedates"] = obj.AssignDueDates,
                 ["comments"] = obj.Comments,
                 ["iscompleted"] = obj.IsCompleted,
-                ["userid"] = obj.UserId
+                ["userid"] = obj.UserId,
+                ["priorityid"] = obj.PriorityId
             };
             dynamicParameters.AddDynamicParams(args);
             return QueryFirstOrDefault<ToDo>("usp_managetodo", dynamicParameters);
+        }
+
+        #endregion
+
+        #region Assign ToDo lIst To User
+
+        public bool AssignedToDoList(int toDoId, int assigndUserId)
+        {
+            try
+            {
+                var dynamicParameters = new DynamicParameters();
+                var args = new Dictionary<string, object>()
+                {
+                    ["toDoId"] = toDoId,
+                    ["assigndUserId"] = assigndUserId
+                };
+                dynamicParameters.AddDynamicParams(args);
+                Execute("usp_assigntodotouser", dynamicParameters);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         #endregion

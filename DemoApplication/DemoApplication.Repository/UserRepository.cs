@@ -59,5 +59,56 @@ namespace DemoApplication.Repository
         }
 
         #endregion
+
+        #region Get Notification By UserId
+
+        public List<Notification> GetNotificationByUserId(int userId)
+        {
+            var dynamicParameters = new DynamicParameters();
+            var args = new Dictionary<string, object>()
+            {
+                ["userId"] = userId
+            };
+            dynamicParameters.AddDynamicParams(args);
+            return Query<Notification>("usp_getnotificationbyuserid", dynamicParameters);
+        }
+
+        #endregion
+
+        #region ToDoCount
+
+        public DashboardViewModel GetDashboardCountByUserId(int userId)
+        {
+            var dynamicParameters = new DynamicParameters();
+            var args = new Dictionary<string, object>()
+            {
+                ["userId"] = userId
+            };
+            dynamicParameters.AddDynamicParams(args);
+            return QueryFirstOrDefault<DashboardViewModel>("usp_getdashboardcountbyuserid", dynamicParameters);
+        }
+
+        #endregion
+
+        #region IsReadNotification
+        public bool IsReadNotification(int notificationId)
+        {
+            try
+            {
+                var dynamicParameters = new DynamicParameters();
+                var args = new Dictionary<string, object>()
+                {
+                    ["notificationId"] = notificationId
+                };
+                dynamicParameters.AddDynamicParams(args);
+                Execute("usp_readnotification", dynamicParameters);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        #endregion
     }
 }

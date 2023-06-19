@@ -1,32 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.csproj": {}
+    "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj": {
+    "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj",
+        "projectUniqueName": "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj",
         "projectName": "DemoApplication.BusinessEntity",
-        "projectPath": "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\obj\\",
+        "projectPath": "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj",
+        "packagesPath": "C:\\Users\\punit\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
         ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\punit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,41 +63,44 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.Repository\\DemoApplication.Repository.csproj": {
+    "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.Repository\\DemoApplication.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.Repository\\DemoApplication.Repository.csproj",
+        "projectUniqueName": "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.Repository\\DemoApplication.Repository.csproj",
         "projectName": "DemoApplication.Repository",
-        "projectPath": "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.Repository\\DemoApplication.Repository.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.Repository\\obj\\",
+        "projectPath": "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.Repository\\DemoApplication.Repository.csproj",
+        "packagesPath": "C:\\Users\\punit\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
         ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\punit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj": {
-                "projectPath": "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj"
+              "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj": {
+                "projectPath": "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj"
               }
             }
           }
@@ -138,45 +144,47 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.csproj": {
+    "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.csproj",
+        "projectUniqueName": "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.csproj",
         "projectName": "DemoApplication",
-        "projectPath": "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication\\obj\\",
+        "projectPath": "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.csproj",
+        "packagesPath": "C:\\Users\\punit\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
         ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\punit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj": {
-                "projectPath": "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj"
+              "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj": {
+                "projectPath": "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.BusinessEntity\\DemoApplication.BusinessEntity.csproj"
               },
-              "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.Repository\\DemoApplication.Repository.csproj": {
-                "projectPath": "C:\\Users\\admin\\Downloads\\DemoApplication\\DemoApplication\\DemoApplication\\DemoApplication.Repository\\DemoApplication.Repository.csproj"
+              "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.Repository\\DemoApplication.Repository.csproj": {
+                "projectPath": "C:\\Project\\DemoApplication\\DemoApplication\\DemoApplication.Repository\\DemoApplication.Repository.csproj"
               }
             }
           }
@@ -209,7 +217,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

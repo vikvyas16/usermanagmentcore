@@ -8,6 +8,53 @@
     <h3>Hello User @ViewBag.DisplayName </h3>
 
     @Html.ActionLink("Update user", "Edit", "User", new { id = @ViewBag.UserId }, null)
+
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- Icon Cards-->
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+                    <div class="inforide">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-4 col-4 rideone"></div>
+                            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                                <h4>Todo-Completed</h4>
+                                <h2>@ViewBag.Completed</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+                    <div class="inforide">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-4 col-4 ridetwo"></div>
+                            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                                <h4>Todo-Created</h4>
+                                <h2>@ViewBag.ToDoCreated</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+                    <div class="inforide">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-4 col-4 ridethree"></div>
+                            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                                <h4>Todo-Assigned</h4>
+                                <h2>@ViewBag.AssignedToDo</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <ul id="myNotifyList"></ul>
 }
 else
 {
